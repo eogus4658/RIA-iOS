@@ -52,12 +52,17 @@ struct HomeView: View {
                         .frame(alignment: .leading)
                         
                         Text("장소에 대해서 세분화합니다.")
+                            .font(.system(size: 15))
                         Text("사진을 찍거나 갤러리에서 가져옵니다.")
+                            .font(.system(size: 15))
                         Text("프롬프트에 원하는 분위기를 가져와보세요!")
+                            .font(.system(size: 15))
                         HStack {
                             List {
                                 Text("건축물")
+                                    .font(.system(size: 17))
                                 Text("휴양지")
+                                    .font(.system(size: 17))
                             }
                             .frame(maxWidth: .infinity)
                             .overlay(
@@ -67,7 +72,9 @@ struct HomeView: View {
                             Spacer()
                             List {
                                 Text("서울")
+                                    .font(.system(size: 17))
                                 Text("인천")
+                                    .font(.system(size: 17))
                             }
                             .frame(maxWidth: .infinity)
                             .overlay(
