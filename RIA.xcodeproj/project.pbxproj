@@ -12,6 +12,7 @@
 		A69D6D6A2C4A8BD600292BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69D6D692C4A8BD600292BFD /* Assets.xcassets */; };
 		A69D6D6D2C4A8BD600292BFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69D6D6C2C4A8BD600292BFD /* Preview Assets.xcassets */; };
 		A69D6D762C56893A00292BFD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D6D752C56893A00292BFD /* HomeView.swift */; };
+		A69D6D7E2C6F960F00292BFD /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D6D7D2C6F960F00292BFD /* SearchResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		A69D6D692C4A8BD600292BFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A69D6D6C2C4A8BD600292BFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A69D6D752C56893A00292BFD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A69D6D7D2C6F960F00292BFD /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				A69D6D692C4A8BD600292BFD /* Assets.xcassets */,
 				A69D6D6B2C4A8BD600292BFD /* Preview Content */,
 				A69D6D752C56893A00292BFD /* HomeView.swift */,
+				A69D6D7D2C6F960F00292BFD /* SearchResultView.swift */,
 			);
 			path = RIA;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A69D6D762C56893A00292BFD /* HomeView.swift in Sources */,
+				A69D6D7E2C6F960F00292BFD /* SearchResultView.swift in Sources */,
 				A69D6D682C4A8BD400292BFD /* ContentView.swift in Sources */,
 				A69D6D662C4A8BD400292BFD /* RIAApp.swift in Sources */,
 			);

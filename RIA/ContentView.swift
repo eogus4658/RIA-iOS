@@ -9,47 +9,48 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            HStack {
-                Text("RIA")
-            }
-            .frame(height: 100)
-            .frame(maxWidth: .infinity)
-            TabView {
-                HomeView()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("홈")
-                    }
-                VStack {
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundStyle(.tint)
-                    Text("Hello, world!")
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("RIA")
                 }
-                    .padding()
-                    .tabItem {
-                        Image(systemName: "leaf.fill")
-                        Text("내 여행목록")
+                .frame(height: 100)
+                .frame(maxWidth: .infinity)
+                TabView {
+                    HomeView()
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("홈")
+                        }
+                    VStack {
+                        Image(systemName: "globe")
+                            .imageScale(.large)
+                            .foregroundStyle(.tint)
+                        Text("Hello, world!")
                     }
-                Text("The First Tab")
-                    .tabItem {
-                        Image(systemName: "plus.circle.fill")
-                        Text("Plus")
-                    }
-                Text("The First Tab")
-                    .tabItem {
-                        Image(systemName: "scribble.variable")
-                        Text("장소 추천")
-                    }
-                Text("The First Tab")
-                    .tabItem {
-                        Image(systemName: "gearshape.fill")
-                        Text("설정")
-                    }
+                        .padding()
+                        .tabItem {
+                            Image(systemName: "leaf.fill")
+                            Text("내 여행목록")
+                        }
+                    Text("The First Tab")
+                        .tabItem {
+                            Image(systemName: "plus.circle.fill")
+                            Text("Plus")
+                        }
+                    Text("The First Tab")
+                        .tabItem {
+                            Image(systemName: "scribble.variable")
+                            Text("장소 추천")
+                        }
+                    Text("The First Tab")
+                        .tabItem {
+                            Image(systemName: "gearshape.fill")
+                            Text("설정")
+                        }
+                }
             }
         }
-        
     }
 }
 

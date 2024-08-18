@@ -106,9 +106,12 @@ struct HomeView: View {
                             .frame(maxWidth: .infinity)
                             .aspectRatio(contentMode: .fill)
                             .padding()
-                        Button("AI Search") {}
-                            .frame(maxWidth: .infinity)
-                            .padding()
+                        
+                        NavigationLink(destination: SearchResultView()) {
+                            Text("AI Search")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                        }
                     }
                     .padding()
                     .overlay(
