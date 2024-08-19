@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SearchResultView: View {
+    // 카카오맵 뷰 appear 상태 관리 변수
+    @State var draw: Bool = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -75,6 +78,11 @@ struct SearchResultView: View {
                 }
                 Text("인천 타워 근처의 카페들을 지도로 표시하였습니다.")
                 Text("반경 300m 내에 있는 9개의 장소를 나타냅니다.")
+                KaKaoMapView(draw: $draw).onAppear(perform: {
+                    self.draw = true
+                }).onDisappear(perform: {
+                    self.draw = false
+                }).frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             .frame(maxWidth: .infinity)
             .overlay(

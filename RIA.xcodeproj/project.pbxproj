@@ -13,6 +13,8 @@
 		A69D6D6D2C4A8BD600292BFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69D6D6C2C4A8BD600292BFD /* Preview Assets.xcassets */; };
 		A69D6D762C56893A00292BFD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D6D752C56893A00292BFD /* HomeView.swift */; };
 		A69D6D7E2C6F960F00292BFD /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D6D7D2C6F960F00292BFD /* SearchResultView.swift */; };
+		A6D13AA02C71F462003252E0 /* KakaoMapsSDK-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = A6D13A9F2C71F462003252E0 /* KakaoMapsSDK-SPM */; };
+		A6D13AA22C731481003252E0 /* KaKaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D13AA12C731481003252E0 /* KaKaoMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		A69D6D6C2C4A8BD600292BFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A69D6D752C56893A00292BFD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A69D6D7D2C6F960F00292BFD /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
+		A6D13AA12C731481003252E0 /* KaKaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoMapView.swift; sourceTree = "<group>"; };
+		A6D13AA32C731CD7003252E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D13AA02C71F462003252E0 /* KakaoMapsSDK-SPM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +60,14 @@
 		A69D6D642C4A8BD400292BFD /* RIA */ = {
 			isa = PBXGroup;
 			children = (
+				A6D13AA32C731CD7003252E0 /* Info.plist */,
 				A69D6D652C4A8BD400292BFD /* RIAApp.swift */,
 				A69D6D672C4A8BD400292BFD /* ContentView.swift */,
 				A69D6D692C4A8BD600292BFD /* Assets.xcassets */,
 				A69D6D6B2C4A8BD600292BFD /* Preview Content */,
 				A69D6D752C56893A00292BFD /* HomeView.swift */,
 				A69D6D7D2C6F960F00292BFD /* SearchResultView.swift */,
+				A6D13AA12C731481003252E0 /* KaKaoMapView.swift */,
 			);
 			path = RIA;
 			sourceTree = "<group>";
@@ -89,6 +96,9 @@
 			dependencies = (
 			);
 			name = RIA;
+			packageProductDependencies = (
+				A6D13A9F2C71F462003252E0 /* KakaoMapsSDK-SPM */,
+			);
 			productName = RIA;
 			productReference = A69D6D622C4A8BD400292BFD /* RIA.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +127,9 @@
 				Base,
 			);
 			mainGroup = A69D6D592C4A8BD400292BFD;
+			packageReferences = (
+				A6D13A9E2C71F461003252E0 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */,
+			);
 			productRefGroup = A69D6D632C4A8BD400292BFD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -147,6 +160,7 @@
 				A69D6D7E2C6F960F00292BFD /* SearchResultView.swift in Sources */,
 				A69D6D682C4A8BD400292BFD /* ContentView.swift in Sources */,
 				A69D6D662C4A8BD400292BFD /* RIAApp.swift in Sources */,
+				A6D13AA22C731481003252E0 /* KaKaoMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +296,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RIA/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RIA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -310,6 +325,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RIA/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RIA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -350,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A6D13A9E2C71F461003252E0 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao-mapsSDK/KakaoMapsSDK-SPM.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A6D13A9F2C71F462003252E0 /* KakaoMapsSDK-SPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6D13A9E2C71F461003252E0 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */;
+			productName = "KakaoMapsSDK-SPM";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A69D6D5A2C4A8BD400292BFD /* Project object */;
 }
