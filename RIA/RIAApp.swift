@@ -14,7 +14,7 @@ struct RIAApp: App {
         WindowGroup {
             ContentView()
                 .onAppear() {
-                    SDKInitializer.InitSDK(appKey: "987c63b458ccdc1c5fecbf59c885f1e8")
+                    SDKInitializer.InitSDK(appKey: "b8b2577e24db63e18aa8202b62132540")
                     print(SDKInitializer.GetAppKey())
 //                    SDKInitializer.
                     print("init sdk")

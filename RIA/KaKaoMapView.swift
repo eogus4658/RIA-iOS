@@ -16,7 +16,10 @@ struct KaKaoMapView: UIViewRepresentable {
         let view: KMViewContainer = KMViewContainer()
         view.sizeToFit()
         context.coordinator.createController(view)
-        context.coordinator.controller?.prepareEngine()
+        print("after createController")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            context.coordinator.controller?.prepareEngine()
+        }
         
         return view
     }
@@ -62,6 +65,7 @@ struct KaKaoMapView: UIViewRepresentable {
         // 엔진 생성 및 초기화 이후, 렌더링 준비가 완료되면 아래 addViews를 호출한다.
         // 원하는 뷰를 생성한다.
         func addViews() {
+            print("addViews")
             let defaultPosition: MapPoint = MapPoint(longitude: 127.108678, latitude: 37.402001)
             let mapviewInfo: MapviewInfo = MapviewInfo(viewName: "mapview", viewInfoName: "map", defaultPosition: defaultPosition)
                         
@@ -83,6 +87,17 @@ struct KaKaoMapView: UIViewRepresentable {
             print("error code: \(errorCode)")
             print("\(desc)")
 //            controller?.prepareEngine() //인증 재시도
+        }
+        
+        func authenticationSucceeded() {
+            print("authenticationSucceeded")
+            print(controller?.isEnginePrepared)
+            print(controller?.isEngineActive)
+            if let controller = controller,
+               !controller.isEngineActive {
+                controller.activateEngine()
+            }
+         
         }
         
         // KMViewContainer 리사이징 될 때 호출.
