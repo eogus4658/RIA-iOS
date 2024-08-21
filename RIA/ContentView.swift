@@ -22,12 +22,7 @@ struct ContentView: View {
                             Image(systemName: "house")
                             Text("홈")
                         }
-                    VStack {
-                        Image(systemName: "globe")
-                            .imageScale(.large)
-                            .foregroundStyle(.tint)
-                        Text("Hello, world!")
-                    }
+                    MyTravelListView()
                         .padding()
                         .tabItem {
                             Image(systemName: "leaf.fill")

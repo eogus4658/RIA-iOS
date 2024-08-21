@@ -15,6 +15,7 @@
 		A69D6D7E2C6F960F00292BFD /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D6D7D2C6F960F00292BFD /* SearchResultView.swift */; };
 		A6D13AA02C71F462003252E0 /* KakaoMapsSDK-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = A6D13A9F2C71F462003252E0 /* KakaoMapsSDK-SPM */; };
 		A6D13AA22C731481003252E0 /* KaKaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D13AA12C731481003252E0 /* KaKaoMapView.swift */; };
+		A6D13AAB2C75CCA2003252E0 /* MyTravelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D13AAA2C75CCA2003252E0 /* MyTravelListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A69D6D7D2C6F960F00292BFD /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		A6D13AA12C731481003252E0 /* KaKaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoMapView.swift; sourceTree = "<group>"; };
 		A6D13AA32C731CD7003252E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A6D13AAA2C75CCA2003252E0 /* MyTravelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				A69D6D752C56893A00292BFD /* HomeView.swift */,
 				A69D6D7D2C6F960F00292BFD /* SearchResultView.swift */,
 				A6D13AA12C731481003252E0 /* KaKaoMapView.swift */,
+				A6D13AAA2C75CCA2003252E0 /* MyTravelListView.swift */,
 			);
 			path = RIA;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				A69D6D7E2C6F960F00292BFD /* SearchResultView.swift in Sources */,
 				A69D6D682C4A8BD400292BFD /* ContentView.swift in Sources */,
 				A69D6D662C4A8BD400292BFD /* RIAApp.swift in Sources */,
+				A6D13AAB2C75CCA2003252E0 /* MyTravelListView.swift in Sources */,
 				A6D13AA22C731481003252E0 /* KaKaoMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
