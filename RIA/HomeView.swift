@@ -10,31 +10,37 @@ import SwiftUI
 struct HomeView: View {
     @State var tfPrompt: String = ""
     
+    var mainImageViews: [Image] = [
+        Image(systemName: "photo"),
+        Image(systemName: "photo"),
+        Image(systemName: "photo"),
+        Image(systemName: "photo"),
+        Image(systemName: "photo")
+    ]
+    
     var body: some View {
         ScrollView() {
-            VStack {
-                HStack(spacing: 20) {
-                    Text("Login View")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .stroke(.purple, lineWidth: 2)
-                        )
-                    List {
-                        Text("친구들과 강릉 여행")
-                            .font(.system(size: 13))
-                        Text("친구들과 제주 여행")
-                            .font(.system(size: 13))
+            VStack(alignment: .leading) {
+                Text("근처 가볼만한 곳")
+                    .font(.system(size: 22, weight: .bold))
+                    .padding()
+                ScrollView(.horizontal, showsIndicators: true) {
+                    HStack {
+                        ForEach(0..<5, id: \.self) { _ in
+                            GeometryReader { geometry in
+                                Image(systemName: "photo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geometry.size.width)
+                            }
+                            .frame(width: UIScreen.main.bounds.width)
+                            
+                        }
                     }
-                    .frame(maxWidth: .infinity)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.purple, lineWidth: 2)
-                    )
+                    .frame(height: 200)
                 }
-                .padding(20)
-                .frame(height: 165)
+                .padding()
+
                 HStack {
                     Spacer(minLength: 20)
                     VStack (alignment: .leading) {

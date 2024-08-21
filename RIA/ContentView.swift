@@ -10,12 +10,26 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            VStack {
+            VStack (alignment: .leading) {
                 HStack {
-                    Text("RIA")
+                    HStack {
+                        Image("logo")
+                        Image("logolabel")
+                    }
+                    .frame(maxWidth: .infinity)
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Text("로그인")
+                        .font(.system(size: 20, weight: .bold))
+                        .padding()
+                        .frame(width: 150)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(.purple, lineWidth: 2)
+                        )
                 }
-                .frame(height: 100)
-                .frame(maxWidth: .infinity)
+                .padding()
+                .frame(height: 80)
                 TabView {
                     HomeView()
                         .tabItem {
