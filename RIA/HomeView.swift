@@ -9,14 +9,23 @@ import SwiftUI
 
 struct HomeView: View {
     @State var tfPrompt: String = ""
+    @State private var image: Image?
+    @State private var inputImage: UIImage?
+    @State private var showImagePicker = false
+    var selectedImage: UIImage? = nil
     
     var mainImageViews: [Image] = [
-        Image(systemName: "photo"),
-        Image(systemName: "photo"),
-        Image(systemName: "photo"),
-        Image(systemName: "photo"),
-        Image(systemName: "photo")
+        Image("tower"),
+        Image("tower"),
+        Image("tower"),
+        Image("tower"),
+        Image("tower")
     ]
+    
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
+    }
     
     var body: some View {
         ScrollView() {
@@ -28,7 +37,7 @@ struct HomeView: View {
                     HStack {
                         ForEach(0..<5, id: \.self) { _ in
                             GeometryReader { geometry in
-                                Image(systemName: "photo")
+                                Image("tower")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: geometry.size.width)
@@ -103,16 +112,17 @@ struct HomeView: View {
                         HStack {
                             Button("사진 찍기") {}
                                 .frame(maxWidth: .infinity)
-                            Button("갤러리") {}
+                            Button("갤러리") {
+                                showImagePicker = true
+                            }
                                 .frame(maxWidth: .infinity)
                         }
                         .padding()
-                        Image(systemName: "photo")
+                        image?
                             .resizable()
                             .frame(maxWidth: .infinity)
                             .aspectRatio(contentMode: .fill)
                             .padding()
-                        
                         NavigationLink(destination: SearchResultView()) {
                             Text("AI Search")
                                 .frame(maxWidth: .infinity)
@@ -128,6 +138,12 @@ struct HomeView: View {
                 }
                 Spacer(minLength: 20)
             }
+        }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(image: $inputImage)
+        }
+        .onChange(of: inputImage) {
+            loadImage()
         }
     }
 }

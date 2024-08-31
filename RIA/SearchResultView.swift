@@ -25,17 +25,16 @@ struct SearchResultView: View {
                 HStack {
                     Image("tower")
                         .resizable()
-                        .padding()
                         .frame(maxWidth: .infinity)
                         .frame(height: 120)
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("Source")
                             .font(.system(size: 15))
-                        Text("건축물, 문화 건축물")
+                        Text("  건축물, 문화 건축물")
                             .font(.system(size: 15))
-                        Text("인천, 울산")
+                        Text("  인천, 울산")
                             .font(.system(size: 15))
-                        Text("잔잔한, 분위기 있는, 장엄한")
+                        Text("  잔잔한, 분위기 있는")
                             .font(.system(size: 15))
                     }
                     .frame(maxWidth: .infinity)
@@ -51,7 +50,7 @@ struct SearchResultView: View {
                                 .resizable()
                                 .padding()
                                 .frame(width: 122, height: 212)
-                            VStack {
+                            VStack (alignment: .leading) {
                                 Text("1. 인천 타워")
                                     .padding()
                                     .font(.system(size: 15))
