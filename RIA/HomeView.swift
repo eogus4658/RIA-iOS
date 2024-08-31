@@ -12,6 +12,7 @@ struct HomeView: View {
     @State private var image: Image?
     @State private var inputImage: UIImage?
     @State private var showImagePicker = false
+    @State private var prompts: [String] = []
     var selectedImage: UIImage? = nil
     
     var mainImageViews: [Image] = [
@@ -101,8 +102,25 @@ struct HomeView: View {
                         .padding([.top, .bottom])
                         VStack (alignment: .leading) {
                             Text("프롬프트")
-                            TextField("잔잔한 장소...", text: $tfPrompt)
+                            HStack {
+                                TextField("잔잔한 장소...", text: $tfPrompt)
+                                if tfPrompt != "" {
+                                    Button("추가") {
+                                        prompts.append(tfPrompt)
+                                        tfPrompt = ""
+                                        
+                                    }
+                                }
+                                
+                            }
                             
+                            HStack {
+                                ForEach(prompts, id: \.self) { prompt in
+                                    Text(prompt)
+                                }
+                                Spacer()
+                            }
+                            .frame(maxWidth: .infinity)
                         }
                         .padding()
                         .overlay(
