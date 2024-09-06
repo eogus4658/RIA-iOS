@@ -40,8 +40,10 @@ struct HomeView: View {
                             GeometryReader { geometry in
                                 Image("tower")
                                     .resizable()
+                                    .cornerRadius(25)
                                     .scaledToFit()
                                     .frame(width: geometry.size.width)
+                                    
                             }
                             .frame(width: UIScreen.main.bounds.width)
                             
@@ -100,16 +102,31 @@ struct HomeView: View {
                         }
                         .frame(height: 100)
                         .padding([.top, .bottom])
+                        HStack {
+                            Button("사진 찍기") {}
+                                .frame(maxWidth: .infinity)
+                            Button("갤러리") {
+                                showImagePicker = true
+                            }
+                                .frame(maxWidth: .infinity)
+                        }
+                        .padding()
+                        image?
+                            .resizable()
+                            .frame(maxWidth: .infinity)
+                            .aspectRatio(contentMode: .fill)
+                            .padding()
                         VStack (alignment: .leading) {
                             Text("프롬프트")
                             HStack {
                                 TextField("잔잔한 장소...", text: $tfPrompt)
                                 if tfPrompt != "" {
-                                    Button("추가") {
+                                    Button(action: {
                                         prompts.append(tfPrompt)
                                         tfPrompt = ""
-                                        
-                                    }
+                                    }, label: {
+                                        Image(systemName: "arrow.right.circle")
+                                    })
                                 }
                                 
                             }
@@ -127,20 +144,6 @@ struct HomeView: View {
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(.purple, lineWidth: 2)
                         )
-                        HStack {
-                            Button("사진 찍기") {}
-                                .frame(maxWidth: .infinity)
-                            Button("갤러리") {
-                                showImagePicker = true
-                            }
-                                .frame(maxWidth: .infinity)
-                        }
-                        .padding()
-                        image?
-                            .resizable()
-                            .frame(maxWidth: .infinity)
-                            .aspectRatio(contentMode: .fill)
-                            .padding()
                         NavigationLink(destination: SearchResultView()) {
                             Text("AI Search")
                                 .frame(maxWidth: .infinity)

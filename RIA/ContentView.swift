@@ -11,25 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack (alignment: .leading) {
-                HStack {
-                    HStack {
-                        Image("logo")
-                        Image("logolabel")
-                    }
-                    .frame(maxWidth: .infinity)
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    Text("로그인")
-                        .font(.system(size: 20, weight: .bold))
-                        .padding()
-                        .frame(width: 150)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .stroke(.purple, lineWidth: 2)
-                        )
-                }
-                .padding()
-                .frame(height: 80)
+                HeaderView()
                 TabView {
                     HomeView()
                         .tabItem {
