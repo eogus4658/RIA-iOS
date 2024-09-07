@@ -34,25 +34,8 @@ struct HomeView: View {
                 Text("근처 가볼만한 곳")
                     .font(.system(size: 22, weight: .bold))
                     .padding()
-                ScrollView(.horizontal, showsIndicators: true) {
-                    HStack {
-                        ForEach(0..<5, id: \.self) { _ in
-                            GeometryReader { geometry in
-                                Image("tower")
-                                    .resizable()
-                                    .cornerRadius(25)
-                                    .scaledToFit()
-                                    .frame(width: geometry.size.width)
-                                    
-                            }
-                            .frame(width: UIScreen.main.bounds.width)
-                            
-                        }
-                    }
+                PageView([ImagePreview(),ImagePreview(),ImagePreview(),ImagePreview(),ImagePreview()])
                     .frame(height: 200)
-                }
-                .padding()
-
                 HStack {
                     Spacer(minLength: 20)
                     VStack (alignment: .leading) {
